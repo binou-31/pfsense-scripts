@@ -20,7 +20,7 @@ Caution : It use Afterfilterchangeshellcmd feature and can broke your custom con
 curl -s https://raw.githubusercontent.com/binou-31/pfsense-scripts/master/installer_rst-sip-provider.sh | sh -s $SIP_PROVIDER_URL
 ```
 
-| Where SIP_PROVIDER_URL variable is your sip domain/IP *(e.g. : sip.occicom.fr)*
+| Where SIP_PROVIDER_URL variable is your sip domain/IP *(e.g. : sip.provider.fr)*
 
 2. **What does it do**
    * It create script `/usr/local/bin/rst-sip-provider.sh`
@@ -35,5 +35,5 @@ curl -s https://raw.githubusercontent.com/binou-31/pfsense-scripts/master/instal
 
 # You should seeing in the /var/log/system.log
 clog -f /var/log/system.log
-Apr 13 19:43:41 <hostname> /usr/local/bin/rst-sip-provider.sh[85545]: Reset States for SIP Provider (sip.occicom.fr) killed 2 states from 1 sources and 1 destinations
+Apr 13 19:43:41 <hostname> /usr/local/bin/rst-sip-provider.sh[85545]: Reset States for SIP Provider (sip.provider.fr) killed 2 states from 1 sources and 1 destinations
 ```
