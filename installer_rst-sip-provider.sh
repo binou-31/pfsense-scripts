@@ -14,14 +14,14 @@ shellCMDConfig="""        <config>\
                         </config>\
                 </shellcmdsettings>"""
 
-systemCMDConfig="""        \<afterfilterchangeshellcmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</afterfilterchangeshellcmd>\
+systemCMDConfig="""        <afterfilterchangeshellcmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</afterfilterchangeshellcmd>\
         </system>"""
 
 # ShellCMD Installation for the WebUI
 pkg install -qy pfSense-pkg-Shellcmd
 
 # Script creation
-cat > /usr/local/bin/rst-sip-provider.sh <<'EOF'
+cat <<- 'EOF' > /usr/local/bin/rst-sip-provider.sh
 #!/bin/sh
 ##
 ## Reset States for SIP Provider
@@ -41,4 +41,3 @@ sed -ie "s|</system>|$systemCMDConfig|" /conf/config.xml
 rm -f /tmp/config.cache
 # First execution after filters are sync
 /etc/rc.filter_configure_sync
-
