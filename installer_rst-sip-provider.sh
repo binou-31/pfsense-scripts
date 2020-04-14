@@ -7,15 +7,15 @@
 [ -z "$1" ] && echo "Usage : $0 [SIP_PROVIDER_URL]" && exit 0
 SIPPROVIDER=$1
 
-shellCMDConfig="""        <config>\
-                            <cmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</cmd>\
-                            <cmdtype>afterfilterchangeshellcmd</cmdtype>\
-                            <description><![CDATA[Script reset states SIP PROVIDER]]></description>\
-                        </config>\
-                </shellcmdsettings>"""
+shellCMDConfig="        <config>\\
+                            <cmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</cmd>\\
+                            <cmdtype>afterfilterchangeshellcmd</cmdtype>\\
+                            <description><![CDATA[Script reset states SIP PROVIDER]]></description>\\
+                        </config>\\
+                </shellcmdsettings>"
 
-systemCMDConfig="""        <afterfilterchangeshellcmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</afterfilterchangeshellcmd>\
-        </system>"""
+systemCMDConfig="       <afterfilterchangeshellcmd>/usr/local/bin/rst-sip-provider.sh ${SIPPROVIDER}</afterfilterchangeshellcmd>\\
+        </system>"
 
 # ShellCMD Installation for the WebUI
 pkg install -qy pfSense-pkg-Shellcmd
