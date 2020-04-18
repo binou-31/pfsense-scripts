@@ -1,4 +1,7 @@
-# pfSense usefull scripts
+pfSense usefull scripts
+========================================
+
+![License: GPLv3](https://img.shields.io/github/license/binou-31/pfsense-scripts?style=flat-square)
 
 ## List of scripts
 
